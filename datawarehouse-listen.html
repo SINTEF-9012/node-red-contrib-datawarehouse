@@ -1,0 +1,43 @@
+<script type="text/javascript">
+    RED.nodes.registerType('datawarehouse-listen',{
+        category: 'input',
+        color: '#3FADB5',
+        defaults: {
+            name: {value:""},
+            database: {value: "", type: "datawarehouse-db"},
+        },
+        inputs:0,
+        outputs:1,
+        icon: "db.png",
+        paletteLabel: "Warehouse",
+        label: function() {
+            return this.name || "Warehouse";
+        }
+    })
+</script>
+
+<script type="text/x-red" data-template-name="datawarehouse-listen">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-database"><i class="fa fa-database"></i> Database</label>
+        <input id="node-input-database" type="text">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="datawarehouse-listen">
+    <p>Listen to changes in a data warehouse.</p>
+
+    <p>The full data warehouse is transmitted as payload when a change is detected. All changes occurring at the same execution tick will trigger only one output message.</p>
+
+    <h3>Outputs</h3>
+
+    <ol class="node-ports">
+        <dl class="message-properties">
+            <dt>payload <span class="property-type">object</span></dt>
+            <dd>The content of the warehouse</dd>
+        </dl>
+    </ol>
+</script>

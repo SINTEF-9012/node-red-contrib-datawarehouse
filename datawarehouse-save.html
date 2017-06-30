@@ -1,0 +1,35 @@
+<script type="text/javascript">
+    RED.nodes.registerType('datawarehouse-save',{
+        category: 'output',
+        color: '#3FADB5',
+        defaults: {
+            name: {value:""},
+            database: {value: "", type: "datawarehouse-db"},
+        },
+        inputs:1,
+        outputs:0,
+        icon: "db.png",
+        align: 'right',
+        paletteLabel: "Warehouse",
+        label: function() {
+            return this.name || "Warehouse";
+        }
+    })
+</script>
+
+<script type="text/x-red" data-template-name="datawarehouse-save">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-database"><i class="fa fa-database"></i> Database</label>
+        <input id="node-input-database" type="text">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="datawarehouse-save">
+    <p>Save the payload in a data warehouse.</p>
+
+    <p>The data warehouse is a key/value storage. The <code>msg.topic</code> is the key, and the <code>msg.payload</code> is the value.</p>
+</script>
