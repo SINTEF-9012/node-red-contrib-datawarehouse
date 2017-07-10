@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-datawarehouse",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Data warehouse for Node-RED. In-memory key/value store emitting the full store when something changes.",
   "author": "Antoine Pultier",
   "license": "Apache-2.0",

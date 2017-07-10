@@ -3,7 +3,8 @@ module.exports = function(RED) {
     RED.nodes.createNode(this, config);
     this.name = config.name;
     this.database = RED.nodes.getNode(config.database);
-
+    var node = this;
+    
     this.on('input', function(msg) {
       if (!msg.topic) {
         node.warn("The message is ignored because msg.topic must be defined.");

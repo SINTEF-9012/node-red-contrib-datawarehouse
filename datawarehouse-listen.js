@@ -7,7 +7,7 @@ module.exports = function(RED) {
     if (this.database) {
       this.database.register(this);
     } else {
-      node.error("The database is not defined correctly.");
+      this.error("The database is not defined correctly.");
     }
   }
 
